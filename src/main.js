@@ -15,6 +15,8 @@ axios.interceptors.response.use(function (response) {
   }else if (res.status === 10){
     //在main.js里面是没有挂载路由实例的,不能用this.$router,所以main.js不能使用router跳转
     window.location.href = '/#/login'
+  }else{
+    alert(res.msg)
   }
 })
 
