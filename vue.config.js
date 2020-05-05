@@ -16,6 +16,10 @@ module.exports = {
             }
         }
     },
+    // webpack相关配置
+    configureWebpack: {
+        devtool: 'source-map',//开启这个就可以了在source里面调试vue了
+    },
     chainWebpack: (config)=>{
         config
             .resolve.alias

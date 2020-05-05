@@ -3,11 +3,11 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from "vue-axios"
 import App from './App.vue'
-
+import env from './env'
 
 axios.defaults.baseURL = '/api';
 axios.defaults.timeout = 8000//设置请求超时时间为8秒,8秒还没有请求成功,就返回失败
-
+axios.defaults.baseURL = env.baseURL;
 axios.interceptors.response.use(function (response) {
   const res =  response.data//这个response是axios封装后给我们的,并不是接口返回的值,response.data才是接口取得的值
   if(res.status === 0) {
