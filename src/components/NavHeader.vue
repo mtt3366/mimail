@@ -9,9 +9,10 @@
           <a href="javascript:;">协议规则</a>
         </div>
         <div class="topbar-user">
-          <a href="javascript:;">登录</a>
+          <a href="javascript:;" v-if="username">{{username}}</a>
+          <a href="javascript:;" v-if="!username" @click="login">登录</a>
           <a href="javascript:;">注册</a>
-          <a href="javascript:;" class="my-cart"><span class="icon-cart"></span>购物车</a>
+          <a href="javascript:;" class="my-cart" @click="goToCart"><span class="icon-cart"></span>购物车</a>
 
         </div>
       </div>
@@ -25,7 +26,17 @@
           <div class="item-menu">
             <span>小米手机</span>
             <div class="children">
-
+              <ul>
+                <li class="product" v-for="(item) of phoneList" :key="item.id">
+                  <a :href="`/#/product/${item.id}`" target="_blank">
+                    <div class="pro-img">
+                      <img v-lazy="item.mainImage" alt="">
+                    </div>
+                    <div class="pro-name">{{item.name}}</div>
+                    <div class="pro-price">{{item.price | currency}}</div>
+                  </a>
+                </li>
+                </ul>
             </div>
           </div>
           <div class="item-menu">
@@ -37,7 +48,62 @@
           <div class="item-menu">
             <span>电视</span>
             <div class="children">
-
+              <ul>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img v-lazy="'/imgs/nav-img/nav-3-1.jpg'" alt="">
+                    </div>
+                    <div class="pro-name">小米壁画电视 65英寸</div>
+                    <div class="pro-price">6999元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img v-lazy="'/imgs/nav-img/nav-3-2.jpg'" alt="">
+                    </div>
+                    <div class="pro-name">小米全面屏电视E55A</div>
+                    <div class="pro-price">1999元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img v-lazy="'/imgs/nav-img/nav-3-3.png'" alt="">
+                    </div>
+                    <div class="pro-name">小米电视4A 32英寸</div>
+                    <div class="pro-price">699元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img v-lazy="'/imgs/nav-img/nav-3-4.jpg'" alt="">
+                    </div>
+                    <div class="pro-name">小米电视4A 55英寸</div>
+                    <div class="pro-price">1799元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img v-lazy="'/imgs/nav-img/nav-3-5.jpg'" alt="">
+                    </div>
+                    <div class="pro-name">小米电视4A 65英寸</div>
+                    <div class="pro-price">2699元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img v-lazy="'/imgs/nav-img/nav-3-6.png'" alt="">
+                    </div>
+                    <div class="pro-name">查看全部</div>
+                    <div class="pro-price">查看全部</div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -53,7 +119,48 @@
 </template>
 <script>
   export default {
-      name: 'nav-header'
+      name: 'nav-header',
+      data() {
+          return {
+            username:'jack',
+            phoneList:[],
+
+          }
+      },
+      mounted(){
+        this.getProductList()
+      },
+      methods: {
+          login(){
+              this.$router.push('/login')
+          },
+          getProductList(){
+              this.axios.get('/products',{
+                  params:{
+                      categoryId:'100012'
+                  }
+              }).then((res)=>{
+                  if(res.list.length>6){
+                      this.phoneList = res.list.slice(0,6)
+                  }else{
+                      this.phoneList =res.list
+                  }
+
+              })
+          },
+          goToCart(){
+              this.$router.push('/cart')
+          }
+      },
+      filters:{
+          currency(val){
+              if(!val){
+                  return '￥0.00元'
+              }else{
+                  return `￥${val.toFixed(2)}元`
+              }
+          }
+      }
   }
 </script>
 <style lang="scss" scoped>
