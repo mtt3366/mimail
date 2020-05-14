@@ -23,6 +23,6 @@ export default {
 </script>
 
 <style>
-  @import "~@/assets/sass/reset.scss";
-  @import "~@/assets/sass/config.scss";
+  @import "~@/assets/scss/reset.scss";
+  @import "~@/assets/scss/config.scss";
 </style>
