@@ -1,10 +1,14 @@
 <template>
   <div>
-    index
+    <service-bar></service-bar>
   </div>
 </template>
 <script>
-    export default {
-        name: 'index',
-    }
+  import ServiceBar from "components/ServiceBar"
+  export default {
+      name: 'index',
+      components: {
+          ServiceBar
+      }
+  }
 </script>
