@@ -1,6 +1,7 @@
 import Vue from  'vue'
 import Router from 'vue-router'
 import Home from 'pages/Home'
+import Login from 'pages/Login'
 import Index from 'pages/Index'
 import Product from 'pages/Product'
 import Detail from 'pages/Detail'
@@ -36,6 +37,11 @@ export default new Router({
                     component: Detail
                 }
             ]
+        },
+        {
+          path:'/login',
+          name: 'login',
+          component: Login
         },
         {
             path: '/cart',//购物车

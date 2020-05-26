@@ -15,10 +15,19 @@ export default {
     }
   },
   mounted() {
-      this.axios.get('/user/login').then((res)=> {
-          this.res = res
-      })
-  }
+      this.getUser();
+      this.getCartCount();
+  },
+   methods:{
+       getUser(){
+           this.axios.get('/user').then(()=>{
+           })
+       },
+       getCartCount(){
+           this.axios.get('/carts/products/sum').then(()=>{
+           })
+       }
+   }
 }
 </script>
 

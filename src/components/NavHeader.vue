@@ -11,7 +11,6 @@
         <div class="topbar-user">
           <a href="javascript:;" v-if="username">{{username}}</a>
           <a href="javascript:;" v-if="!username" @click="login">登录</a>
-          <a href="javascript:;">注册</a>
           <a href="javascript:;" class="my-cart" @click="goToCart"><span class="icon-cart"></span>购物车</a>
 
         </div>
@@ -122,7 +121,7 @@
       name: 'nav-header',
       data() {
           return {
-            username:'jack',
+            username:'',
             phoneList:[],
 
           }
@@ -167,6 +166,7 @@
   @import './../assets/scss/base.scss';
   @import './../assets/scss/mixin.scss';
   @import './../assets/scss/config.scss';
+  @import './../assets/scss/button.scss';
   .header{
     .nav-topbar{
       height:39px;
