@@ -26,5 +26,6 @@ module.exports = {
             .set('@', resolve('src'))
             .set('pages', resolve('src/pages'))
             .set('components', resolve('src/components'))
+            .set('assets', resolve('src/assets'))
     }
 }

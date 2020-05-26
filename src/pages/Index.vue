@@ -89,10 +89,12 @@
       </div>
     </div>
     <service-bar></service-bar>
+    <modal></modal>
   </div>
 </template>
 <script>
   import ServiceBar from "components/ServiceBar"
+  import Modal from 'components/Modal'
   import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
   import 'swiper/css/swiper.css'
 
@@ -101,7 +103,8 @@
       components: {
           ServiceBar,
           Swiper,
-          SwiperSlide
+          SwiperSlide,
+          Modal
       },
       directives: {
           swiper: directive

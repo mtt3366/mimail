@@ -10,6 +10,7 @@ import OrderConfirm from 'pages/OrderConfirm'
 import OrderList from 'pages/OrderList'
 import OrderPay from 'pages/OrderPay'
 import AliPay from "@/pages/AliPay"
+import Test from "components/Test.vue"
 
 Vue.use(Router)
 
@@ -67,6 +68,12 @@ export default new Router({
                     component: AliPay,
                 }
             ]
-        }
+        },
+        {
+            path: '/test',//
+            name: 'test',
+            component: Test,
+        },
+
     ]
 })
