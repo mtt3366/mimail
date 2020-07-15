@@ -24,7 +24,8 @@ export default {
            })
        },
        getCartCount(){
-           this.axios.get('/carts/products/sum').then(()=>{
+           this.axios.get('/carts/products/sum').then((res)=>{
+              console.log(res)
            })
        }
    }
