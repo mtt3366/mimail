@@ -10,7 +10,7 @@ const mock = true//mock开关
 if(mock) {
   require('./mock/api.js')
 }
-axios.defaults.baseURL = '/api';
+axios.defaults.baseURL = '/api';//在所有请求前面添加'/api'
 axios.defaults.timeout = 8000//设置请求超时时间为8秒,8秒还没有请求成功,就返回失败
 // axios.defaults.baseURL = env.baseURL;
 axios.interceptors.response.use(function (response) {
