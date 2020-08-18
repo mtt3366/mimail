@@ -162,7 +162,7 @@
       }
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   @import './../assets/scss/mixin.scss';
   @import './../assets/scss/config.scss';
   @import './../assets/scss/button.scss';
