@@ -1,9 +1,9 @@
 <template>
   <div>
     <test-alert>
-      <template #header="slotProps2">
+      <template #header="{users:person}">
         <h1>im header</h1>
-        {{slotProps2.users.lastName}}
+        {{person.lastName}}
       </template>
       <template #footer="slotProps">
         <h1>im footer</h1>
