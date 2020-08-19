@@ -1,11 +1,10 @@
 <template>
   <div>
     <test-alert>
-      <template #header>
+      <template #header="slotProps2">
         <h1>im header</h1>
+        {{slotProps2.users.lastName}}
       </template>
-
-      其他内容
       <template #footer="slotProps">
         <h1>im footer</h1>
         <h2>{{slotProps.user.lastName}}</h2>
