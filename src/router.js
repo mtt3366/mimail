@@ -11,7 +11,7 @@ import OrderConfirm from 'pages/OrderConfirm'
 import OrderList from 'pages/OrderList'
 import OrderPay from 'pages/OrderPay'
 import AliPay from "@/pages/AliPay"
-import Test from "components/Test.vue"
+import Test from "@/pages/Test.vue"
 
 Vue.use(Router)
 
