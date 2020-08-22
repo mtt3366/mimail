@@ -12,6 +12,7 @@ import OrderList from 'pages/OrderList'
 import OrderPay from 'pages/OrderPay'
 import AliPay from "@/pages/AliPay"
 import Test from "@/pages/Test.vue"
+import ColumnList from "components/TestCom/ColumnList"
 
 Vue.use(Router)
 
@@ -79,6 +80,11 @@ export default new Router({
             path: '/test',//
             name: 'test',
             component: Test,
+        },
+        {
+            path: '/columnList',//作用域插槽理解
+            name: 'ColumnList',
+            component: ColumnList,
         },
 
     ]
