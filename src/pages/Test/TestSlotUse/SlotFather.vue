@@ -1,6 +1,6 @@
 <template>
   <div>
-    <test-alert>
+    <test-slot>
       <template #header="{users:person}">
         <h1>im header</h1>
         {{person.lastName}}
@@ -9,23 +9,17 @@
         <h1>im footer</h1>
         <h2>{{slotProps.user.lastName}}</h2>
       </template>
-    </test-alert>
-    <a-button type="primary" @click="showMsg">Button</a-button>
+    </test-slot>
   </div>
 </template>
 
 <script>
-    import TestAlert from "components/TestAlert"
+    import TestSlot from "./TestSlot"
 
     export default {
-        name: "Test",
+        name: "TestFather",
         components: {
-            TestAlert
-        },
-        methods: {
-            showMsg() {
-                this.$message.info('This is a normal message');
-            }
+            TestSlot
         }
     }
 </script>

@@ -11,8 +11,9 @@ import OrderConfirm from 'pages/OrderConfirm'
 import OrderList from 'pages/OrderList'
 import OrderPay from 'pages/OrderPay'
 import AliPay from "@/pages/AliPay"
-import Test from "@/pages/Test.vue"
-import ColumnList from "components/TestCom/ColumnList"
+import TestIndex from "pages/Test/Index.vue"
+import SlotFather from "pages/Test/TestSlotUse/SlotFather.vue"
+import ColumnList from "pages/Test/TestSlotCardDemo/ColumnList"
 
 Vue.use(Router)
 
@@ -79,13 +80,23 @@ export default new Router({
         {
             path: '/test',//
             name: 'test',
-            component: Test,
+            component: TestIndex,
+            children: [
+                {
+                    path: 'slot-use',//作用于插槽使用
+                    name: 'slot-use',
+                    component: SlotFather,
+                    meta: { desc: '作用域插槽使用' }
+                },
+                {
+                    path: 'slot-cord-demo',//作用域插槽卡片示例理解
+                    name: 'slot-cord-demo',
+                    component: ColumnList,
+                    meta: { desc: '作用域插槽卡片示例理解' }
+                },
+            ]
         },
-        {
-            path: '/columnList',//作用域插槽理解
-            name: 'ColumnList',
-            component: ColumnList,
-        },
+
 
     ]
 })

@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: "test-alert",
+  name: "test-slot",
   components: {},
   data() {
     return {
