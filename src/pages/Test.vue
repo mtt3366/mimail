@@ -10,19 +10,24 @@
         <h2>{{slotProps.user.lastName}}</h2>
       </template>
     </test-alert>
-    <a-button type="primary">Button</a-button>
+    <a-button type="primary" @click="showMsg">Button</a-button>
   </div>
 </template>
 
 <script>
-import TestAlert from "components/TestAlert"
+    import TestAlert from "components/TestAlert"
 
-export default {
-  name: "Test",
-  components: {
-    TestAlert
-  }
-}
+    export default {
+        name: "Test",
+        components: {
+            TestAlert
+        },
+        methods: {
+            showMsg() {
+                this.$message.info('This is a normal message');
+            }
+        }
+    }
 </script>
 
 <style scoped>
