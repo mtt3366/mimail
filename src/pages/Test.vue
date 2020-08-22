@@ -10,6 +10,7 @@
         <h2>{{slotProps.user.lastName}}</h2>
       </template>
     </test-alert>
+    <a-button type="primary">Button</a-button>
   </div>
 </template>
 

@@ -4,6 +4,7 @@ import axios from 'axios'
 import VueAxios from "vue-axios"
 import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
+import ant from "./config/AntDesign";
 import App from './App.vue'
 
 const mock = true//mock开关
@@ -34,6 +35,7 @@ Vue.use(VueCookie)
 Vue.use(VueLazyLoad, {
   loading: '/imgs/loading-svg/loading-bars.svg'
 })
+Vue.use(ant);
 Vue.config.productionTip = false//生产环境下默认关闭vue的底层打印出来的信息
 
 
