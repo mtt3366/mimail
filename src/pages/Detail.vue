@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-    export default {
-        name: 'detail',
-    }
+export default {
+  name: "detail"
+};
 </script>

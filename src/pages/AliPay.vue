@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-    export default {
-        name: 'ali-pay',
-    }
+export default {
+  name: "ali-pay"
+};
 </script>

@@ -5,19 +5,13 @@
 </template>
 
 <script>
-    export default {
-        name: "TestIndex",
-        data() {
-            return {
-
-            }
-        },
-        methods: {
-
-        }
-    }
+export default {
+  name: "TestIndex",
+  data() {
+    return {};
+  },
+  methods: {}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

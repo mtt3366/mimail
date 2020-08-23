@@ -3,19 +3,16 @@
 
 //完整组件列表 以及引用方法
 //https://github.com/vueComponent/ant-design-vue/blob/master/components/index.js
-import {Button,Select, message} from 'ant-design-vue';
+import { Button, Select, message } from "ant-design-vue";
 
-const components = [
-    Button,
-    Select
-]
+const components = [Button, Select];
 const ant = {
-    install: function (Vue) {
-        components.map(component => {
-            Vue.use(component);
-        });
+  install: function(Vue) {
+    components.map(component => {
+      Vue.use(component);
+    });
 
-        Vue.prototype.$message = message;
-    }
+    Vue.prototype.$message = message;
+  }
 };
-export default ant
+export default ant;
