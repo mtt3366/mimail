@@ -3,15 +3,15 @@
     <div class="nav-topbar">
       <div class="container">
         <div class="topbar-menu">
-          <a href="javascript:;">小米商城</a>
-          <a href="javascript:;">MUI</a>
-          <a href="javascript:;">云服务</a>
-          <a href="javascript:;">协议规则</a>
+          <a href="javascript:">小米商城</a>
+          <a href="javascript:">MUI</a>
+          <a href="javascript:">云服务</a>
+          <a href="javascript:">协议规则</a>
         </div>
         <div class="topbar-user">
-          <a href="javascript:;" v-if="username">{{ username }}</a>
-          <a href="javascript:;" v-if="!username" @click="login">登录</a>
-          <a href="javascript:;" class="my-cart" @click="goToCart"
+          <a href="javascript:" v-if="username">{{ username }}</a>
+          <a href="javascript:" v-if="!username" @click="login">登录</a>
+          <a href="javascript:" class="my-cart" @click="goToCart"
             ><span class="icon-cart"></span>购物车</a
           >
         </div>
@@ -108,7 +108,7 @@
         <div class="header-search">
           <div class="wrapper">
             <input type="text" name="keyword" />
-            <a href="javascript:;"></a>
+            <a href="javascript:"></a>
           </div>
         </div>
       </div>
